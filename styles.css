@@ -1,0 +1,274 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #1c2a57, #050716);
+  color: #f5f7ff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app {
+  width: 90vw;
+  max-width: 1100px;
+  height: 75vh; /* fixed height for the whole card */
+  background: radial-gradient(circle at center, #101632, #050715);
+  border-radius: 24px;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 32px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+}
+
+/* Left console */
+.console-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1de5ff, #4b7bff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.console-title h1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.console-title p {
+  font-size: 12px;
+  color: #9ba3c6;
+}
+
+.console {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mic-wrapper {
+  position: relative;
+  margin: 40px 0 16px;
+}
+
+.mic-outer-ring {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(89, 210, 255, 0.2), transparent 65%);
+  box-shadow:
+    0 0 0 2px rgba(40, 120, 255, 0.2),
+    0 0 40px rgba(0, 180, 255, 0.7);
+}
+
+.mic-button {
+  position: absolute;
+  inset: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: radial-gradient(circle at top, #44e2ff, #3060ff);
+  box-shadow:
+    0 0 0 6px rgba(12, 40, 120, 0.8),
+    0 16px 40px rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.mic-button.active {
+  transform: translate(-50%, -50%) scale(1.05);
+  background: radial-gradient(circle at top, #5affd6, #33a9ff);
+  box-shadow:
+    0 0 0 10px rgba(66, 255, 200, 0.3),
+    0 20px 50px rgba(0, 0, 0, 1);
+}
+
+.mic-icon {
+  font-size: 40px;
+}
+
+.status-text {
+  font-size: 14px;
+  color: #b8c2ff;
+}
+
+.hint-text {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #7780a8;
+}
+
+/* Right chat */
+.chat-panel {
+  background: linear-gradient(160deg, rgba(9, 14, 40, 0.9), rgba(9, 14, 40, 0.7));
+  border-radius: 20px;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.chat-controls-top {
+  display: flex;
+  gap: 10px;
+}
+
+/* pill-style buttons like your screenshot */
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #38d9ff, #4777ff);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+}
+
+.pill-icon {
+  font-size: 12px;
+}
+
+.pill-text {
+  font-size: 12px;
+}
+
+
+.chat-header h2 {
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.chat-header p {
+  font-size: 11px;
+  color: #8c95c3;
+}
+
+#latency {
+  font-size: 11px;
+  color: #5be8ff;
+}
+
+/* scrollable chat area with colored scrollbar */
+.messages {
+  margin-top: 16px;
+  flex: 1;                /* take all remaining space between header & footer */
+  overflow-y: auto;       /* only messages scroll */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 4px;
+
+  /* Firefox scrollbar color */
+  scrollbar-width: thin;
+  scrollbar-color: #38d9ff rgba(4, 8, 26, 0.7);
+}
+
+/* Chrome/Edge/Safari scrollbar */
+.messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages::-webkit-scrollbar-track {
+  background: rgba(4, 8, 26, 0.7);
+  border-radius: 999px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #38d9ff, #4777ff);
+  border-radius: 999px;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #5af0ff, #6a8bff);
+}
+
+.msg {
+  max-width: 90%;
+  padding: 10px 12px;
+  border-radius: 14px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.msg.user {
+  margin-left: auto;
+  background: linear-gradient(135deg, #325dff, #5a8bff);
+}
+
+.msg.bot {
+  margin-right: auto;
+  background: rgba(15, 24, 63, 0.95);
+  border: 1px solid rgba(114, 142, 255, 0.5);
+}
+
+.chat-footer {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.chat-footer input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(93, 122, 255, 0.8);
+  background: rgba(3, 7, 26, 0.9);
+  color: #f5f7ff;
+  font-size: 13px;
+  outline: none;
+}
+
+.chat-footer input::placeholder {
+  color: #6f77a5;
+}
+
+.send-btn {
+  padding: 0 16px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #38d9ff, #4777ff);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}

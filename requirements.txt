@@ -1,0 +1,9 @@
+python-dotenv
+SpeechRecognition
+pyttsx3
+pyaudio
+
+ 
+##pip show flask
+##pip install SpeechRecognition pyttsx3 pyaudio
+##pip install flask-cors

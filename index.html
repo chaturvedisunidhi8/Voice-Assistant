@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Voice Assistant</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Left main console -->
+    <section class="console">
+      <header class="console-header">
+        <div class="logo-circle">VA</div>
+        <div class="console-title">
+          <h1>My Voice Hub</h1>
+          <p>Real-time conversational assistant</p>
+        </div>
+      </header>
+
+      <div class="mic-wrapper">
+        <div class="mic-outer-ring"></div>
+        <button id="micBtn" class="mic-button">
+          <span class="mic-icon">🎤</span>
+        </button>
+      </div>
+
+      <p id="status" class="status-text">
+        Tap the mic and start speaking…
+      </p>
+
+      <p class="hint-text">
+        Ask anything, for example: “Summarize my schedule for today.”
+      </p>
+    </section>
+
+    <!-- Right chat panel -->
+   <section class="chat-panel">
+  <header class="chat-header">
+    <div>
+      <h2>Live interaction</h2>
+      <p id="latency">Latency: –</p>
+    </div>
+
+    <div class="chat-controls-top">
+      <button id="clearBtn" class="pill-btn">Clear</button>
+      <button id="pauseToggleBtn" class="pill-btn">
+        <span class="pill-icon">⏸</span>
+        <span class="pill-text">Pause</span>
+      </button>
+    </div>
+  </header>
+
+  <div id="messages" class="messages"></div>
+
+  <footer class="chat-footer">
+    <input
+      id="textInput"
+      type="text"
+      placeholder="Type instead of speaking..."
+    />
+    <button id="sendBtn" class="send-btn">Send</button>
+  </footer>
+</section>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
