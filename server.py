@@ -3,7 +3,7 @@ import os
 from flask import Flask, request, jsonify
 import requests
 from dotenv import load_dotenv 
-from flask_cors import CORS
+from flask_cors import CORS 
 
 load_dotenv()  # load .env so OPENROUTER_API_KEY is available[web:59][web:61]
 
