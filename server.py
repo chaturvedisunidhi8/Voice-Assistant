@@ -19,7 +19,7 @@ OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"  # chat endpoin
 MODEL_NAME = "amazon/nova-2-lite-v1:free"  # model id from OpenRouter model page[web:77][web:83]
 ##amazon/nova-2-lite-v1:free
 ##arcee-ai/trinity-mini:free  , tngtech/tng-r1t-chimera:free
-@app.route("/ask", methods=["POST"])
+@app.route("/ask", methods=["POST"]) 
 def ask():
     data = request.get_json(silent=True) or {}
     prompt = data.get("prompt", "").strip()
